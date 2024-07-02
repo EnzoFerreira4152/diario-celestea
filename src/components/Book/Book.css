@@ -1,9 +1,12 @@
 /* src/components/Book.css */
 .book {
-   width: 494px;
-   height: 741px;
+   width: 100%;
+   max-width: 494px;
+   height: auto;
+   max-height: 741px;
    perspective: 1000px;
    position: relative;
+   margin: 0 auto;
 }
 
 .book-container {
@@ -40,6 +43,32 @@
 
 .page-image {
    width: 100%;
-   height: 100%;
+   height: auto;
    object-fit: cover;
+}
+
+button {
+   display: block;
+   margin: 10px auto;
+   padding: 10px 20px;
+   font-size: 1em;
+   cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+   .book {
+      width: 90%;
+      height: auto;
+   }
+
+   .page-image {
+      height: auto;
+   }
+
+   button {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.2em;
+   }
 }
