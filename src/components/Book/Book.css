@@ -1,0 +1,45 @@
+/* src/components/Book.css */
+.book {
+   width: 494px;
+   height: 741px;
+   perspective: 1000px;
+   position: relative;
+}
+
+.book-container {
+   width: 100%;
+   height: 100%;
+   position: relative;
+   transform-style: preserve-3d;
+   transition: transform 0.6s;
+}
+
+.page {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   backface-visibility: hidden;
+   transform-origin: left;
+   transition: transform 1.5s;
+}
+
+.page.current {
+   transform: rotateY(0deg);
+   z-index: 2;
+}
+
+.page.previous {
+   transform: rotateY(-180deg);
+   z-index: 1;
+}
+
+.page.next {
+   transform: rotateY(180deg);
+   z-index: 0;
+}
+
+.page-image {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
