@@ -15,38 +15,30 @@ const images = [
 
 const Book = () => {
    const [currentPage, setCurrentPage] = useState(0);
+   const audioFlip = new Audio('./audio/page-flip.mp3');
+   const audioClose = new Audio('./audio/close.mp3');
 
    const nextPage = () => {
       if (currentPage === 0){
          setCurrentPage(currentPage + 1);
       } else if (currentPage > 0 && currentPage < images.length - 1) {
+         audioFlip.play();
          setCurrentPage(currentPage + 1);
-         playPageFlipSound();
       } else {
-         setCurrentPage(0);  // Volver al principio
-         playCloseSound();
+         audioClose.play();
+         setCurrentPage(0);
       }
    };
 
    const prevPage = () => {
       if (currentPage === 1){
+         audioClose.play();
          setCurrentPage(0);
-         playCloseSound();
       }
       else if (currentPage > 0) {
+         audioFlip.play();
          setCurrentPage(currentPage - 1);
-         playPageFlipSound();
       }
-   };
-
-   const playPageFlipSound = () => {
-      const audio = new Audio('./audio/page-flip.mp3');
-      audio.play();
-   };
-
-   const playCloseSound = () => {
-      const audio = new Audio('./audio/close.mp3');
-      audio.play();
    };
 
    return (
