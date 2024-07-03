@@ -11,14 +11,15 @@ const images = [
    '/images/page4.png',
    '/images/page5.png',
    '/images/page6.png',
-   // Añade más rutas de imágenes según sea necesario
 ];
 
 const Book = () => {
    const [currentPage, setCurrentPage] = useState(0);
 
    const nextPage = () => {
-      if (currentPage < images.length - 1) {
+      if (currentPage === 0){
+         setCurrentPage(currentPage + 1);
+      } else if (currentPage > 0 && currentPage < images.length - 1) {
          setCurrentPage(currentPage + 1);
          playPageFlipSound();
       } else {
@@ -28,16 +29,18 @@ const Book = () => {
    };
 
    const prevPage = () => {
-      if (currentPage > 0) {
+      if (currentPage === 1){
+         setCurrentPage(0);
+         playCloseSound();
+      }
+      else if (currentPage > 0) {
          setCurrentPage(currentPage - 1);
          playPageFlipSound();
-      } else {
-         playIntroSound();
       }
    };
 
    const playPageFlipSound = () => {
-      const audio = new Audio('./audio/page-flip-1.mp3');
+      const audio = new Audio('./audio/page-flip.mp3');
       audio.play();
    };
 
