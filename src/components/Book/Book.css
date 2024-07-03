@@ -43,3 +43,10 @@
    height: 100%;
    object-fit: cover;
 }
+
+@media (max-width: 600px) {
+   .book{
+      width: 345.8px;
+      height: 518.7px;
+   }
+}
