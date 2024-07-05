@@ -5,12 +5,14 @@ import './Book.css';
 
 const images = [
    '/images/cover.png',
+   '/images/page0.png',
    '/images/page1.png',
    '/images/page2.png',
    '/images/page3.png',
    '/images/page4.png',
    '/images/page5.png',
    '/images/page6.png',
+   '/images/page7.png',
 ];
 
 const Book = () => {
