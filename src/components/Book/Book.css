@@ -44,9 +44,9 @@
    object-fit: fill;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
    .book{
-      width: 345.8px;
-      height: 518.7px;
+      width: 397.67px;
+      height: 596.50px;
    }
 }
