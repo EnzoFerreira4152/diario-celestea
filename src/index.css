@@ -28,3 +28,9 @@ button:focus,
 button:focus-visible {
   outline: 2px auto #824b0d/*-webkit-focus-ring-color*/;
 }
+
+@media (max-width: 500px) {
+  body{
+    place-items: start;
+  }
+}
